@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Marker Custom Icons Example</title>
+        <link rel = "stylesheet" href = "http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css"/>
+        <script src = "http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+    </head>
+
+    <body>
+        <div id = "map" style = "width: 100%; height: 624px"></div>
+        <script>
+
+            function myFunction(parameter) {
+
+            const myArray = parameter.split(",");
+
+            var ceneter_lat = parseFloat("" + myArray[1]);
+            var ceneter_long = parseFloat("" + myArray[2]);
+
+
+            // Creating map options
+            var mapOptions = {
+            center: [ceneter_lat, ceneter_long],
+            zoom: 16
+            }
+            // Creating a map object
+            var map = new L.map('map', mapOptions);
+
+            // Creating a Layer object
+            var layer = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
+
+            // Adding layer to the map
+            map.addLayer(layer);
+
+            // Icon Gateway
+            var icon_gateway = {
+            iconUrl: '../img/base.png',
+            iconSize: [24, 24]
+            }
+
+            // Icon Node
+            var icon_node = {
+            iconUrl: '../img/rover.png',
+            iconSize: [24, 24]
+            }
+            // Creating a custom icon
+            var custom_icon_gateway = L.icon(icon_gateway);
+            var custom_icon_node = L.icon(icon_node);
+
+            // Creating Marker Options
+            var marker_gateway = {
+            title: "",
+            clickable: true,
+            draggable: false,
+            icon: custom_icon_gateway
+            }
+            var marker_node = {
+            title: "",
+            clickable: true,
+            draggable: false,
+            icon: custom_icon_node
+            }
+
+            var name = "sand";
+            var count = 0;
+
+            var l_lat = ceneter_lat;
+            var l_long = ceneter_long;
+
+
+            for (var i = 0; i < myArray.length; ) {
+
+
+            name = "" + myArray[i];
+            l_lat = parseFloat("" + myArray[i + 1]);
+            l_long = parseFloat("" + myArray[i + 2]);
+
+            if (count == 0) {
+            // Creating a for Gateway
+            var marker = L.marker([ceneter_lat, ceneter_long], marker_gateway);
+
+            // Adding popup to the marker
+            marker.bindPopup(name).openPopup();
+
+            // Adding marker to the map
+            marker.addTo(map);
+
+            } else {
+            // Creating a for Node
+            var marker = L.marker([l_lat, l_long], marker_node);
+
+            // Adding popup to the marker
+            marker.bindPopup(name).openPopup();
+
+            // Adding marker to the map
+            marker.addTo(map);
+            }
+
+
+            if (count > 0) {
+            var latlngs = [
+            [ceneter_lat, ceneter_long],
+            [l_lat, l_long]
+            ];
+            // Creating a poly line
+            var polyline = L.polyline(latlngs, {color: 'red'});
+
+            // Adding to poly line to map
+            polyline.addTo(map);
+
+            }
+
+            i = i + 3;
+            count = count + 2;
+            }
+            }
+        </script>
+    </body>
+
+</html>

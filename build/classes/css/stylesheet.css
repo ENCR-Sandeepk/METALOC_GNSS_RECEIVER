@@ -1,0 +1,9 @@
+.head-background
+{
+    -fx-background-color: linear-gradient(to top,#f5d238  ,#705d06);
+}
+
+.option-background
+{
+    -fx-background-color: linear-gradient(to right,#705d06 ,#f5d238 );
+}

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="achor_pane" prefHeight="180.0" prefWidth="750.0" style="-fx-background-color: #102027; -fx-border-color: #ffffff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dialog.SelectConfigFilePathController">
+    <children>
+        <ImageView fitHeight="170.0" fitWidth="150.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../img/storage_location.png" />
+            </image>
+        </ImageView>
+        <Label layoutX="170.0" layoutY="15.0" prefHeight="30.0" prefWidth="506.0" text="Logger Data Files must be kept to user accessible area." textFill="#ff4040">
+            <font>
+                <Font size="17.0" />
+            </font>
+        </Label>
+        <Label layoutX="170.0" layoutY="45.0" prefHeight="30.0" prefWidth="506.0" text="Please browse folder path to select the Data File Storage Location" textFill="#ff4040">
+            <font>
+                <Font size="17.0" />
+            </font>
+        </Label>
+        <Label layoutX="170.0" layoutY="85.0" prefHeight="30.0" prefWidth="150.0" text="Data File Location" textFill="WHITE">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Label>
+        <Label fx:id="lbl_data_file_location" layoutX="319.0" layoutY="85.0" prefHeight="30.0" prefWidth="410.0" text="..." textFill="WHITE">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Label>
+        <Button fx:id="btn_cancel" alignment="CENTER" graphicTextGap="10.0" layoutX="375.0" layoutY="130.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#action_cancel" prefHeight="32.0" prefWidth="110.0" style="-fx-background-color: #37474f;" text="Cancel" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+            <graphic>
+                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../img/clear_all.png" />
+                    </image>
+                </ImageView>
+            </graphic>
+        </Button>
+        <Button fx:id="btn_ok" alignment="CENTER" graphicTextGap="10.0" layoutX="500.0" layoutY="130.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#action_ok" prefHeight="32.0" prefWidth="110.0" style="-fx-background-color: #37474f;" text="OK" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+            <graphic>
+                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../img/update.png" />
+                    </image>
+                </ImageView>
+            </graphic>
+        </Button>
+        <Button fx:id="btn_browse" alignment="CENTER" graphicTextGap="10.0" layoutX="625.0" layoutY="130.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#action_browse" prefHeight="32.0" prefWidth="110.0" style="-fx-background-color: #37474f;" text="Browse..." textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+            <graphic>
+                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../img/browse.png" />
+                    </image>
+                </ImageView>
+            </graphic>
+        </Button>
+    </children>
+</AnchorPane>

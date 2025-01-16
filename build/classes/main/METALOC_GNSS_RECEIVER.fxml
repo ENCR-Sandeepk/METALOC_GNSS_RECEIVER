@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1100.0" style="-fx-background-color: #12152B;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.METALOC_GNSS_RECEIVER_Controller">
+    <children>
+        <ImageView fitHeight="150.0" fitWidth="915.0" layoutX="185.0" pickOnBounds="true">
+            <image>
+                <Image url="@../img/11.png" />
+            </image>
+        </ImageView>
+        <ImageView fitHeight="150.0" fitWidth="185.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../img/8.gif" />
+            </image>
+        </ImageView>
+        <TableView fx:id="table_view" layoutX="15.0" layoutY="160.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="250.0" prefWidth="1070.0">
+            <columns>
+                <TableColumn fx:id="date_time" prefWidth="72.0" text="Date Time" />
+                <TableColumn fx:id="rover" prefWidth="63.0" text="ROVER ID" />
+                <TableColumn fx:id="base" prefWidth="55.0" text="BASE ID" />
+                <TableColumn fx:id="gnss_time" prefWidth="41.0" text="GNSS&#10;TIME" />
+                <TableColumn fx:id="rms" minWidth="8.0" prefWidth="60.0" text="RMS&#10;VALUE&#10;" />
+                <TableColumn fx:id="lat" prefWidth="70.0" text="LATTITUDE" />
+                <TableColumn fx:id="lon" prefWidth="81.0" text="LONGITUDE" />
+                <TableColumn fx:id="east" prefWidth="70.0" text="dEASTING" />
+                <TableColumn fx:id="north" prefWidth="81.0" text="dNORTHING" />
+                <TableColumn fx:id="alti" prefWidth="72.0" text="dALTITUDE" />
+                <TableColumn fx:id="ratio" prefWidth="57.0" text="RATIO" />
+                <TableColumn fx:id="un" prefWidth="33.0" text="UN" />
+                <TableColumn fx:id="gps" prefWidth="41.0" text="GPS" />
+                <TableColumn fx:id="beidou" prefWidth="49.0" text="BEIDOU" />
+                <TableColumn fx:id="glonass" prefWidth="75.0" text="GLONASS" />
+                <TableColumn fx:id="galileo" prefWidth="119.0" text="GALILEO" />
+            </columns>
+        </TableView>
+        <Pane layoutX="570.0" layoutY="425.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="215.0" prefWidth="515.0" style="-fx-background-color: #3A84C3; -fx-background-radius: 1em;">
+            <children>
+                <Label layoutX="15.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="170.0" text="  Data Storage Location" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="13.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="tf_data_storage_location" editable="false" layoutX="15.0" layoutY="40.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="440.0" promptText="  Data Storage Location">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </TextField>
+                <Button fx:id="btn_browse_storage_location" layoutX="470.0" layoutY="40.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#action_browse_storage_location" prefHeight="30.0" prefWidth="30.0" styleClass="head-background" stylesheets="@../css/stylesheet.css" textFill="WHITE">
+                    <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../img/browse.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <tooltip>
+                        <Tooltip text="Change Theme" />
+                    </tooltip>
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </Button>
+                <Label layoutX="15.0" layoutY="80.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="150.0" text="  Max Record Per File" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="13.0" />
+                    </font>
+                </Label>
+                <ComboBox fx:id="cbb_max_rec_per_file" layoutX="15.0" layoutY="105.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="150.0" />
+                <Label layoutX="183.0" layoutY="80.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="150.0" text="  Upload File Action" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="13.0" />
+                    </font>
+                </Label>
+                <ComboBox fx:id="cbb_upload_file_action" layoutX="183.0" layoutY="105.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="150.0" />
+                <Label layoutX="350.0" layoutY="80.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="150.0" text="  Date Time Foramt" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="13.0" />
+                    </font>
+                </Label>
+                <ComboBox fx:id="cbb_date_time_format" layoutX="350.0" layoutY="105.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="150.0" />
+                <Button fx:id="btn_edit_storage_settings" layoutX="350.0" layoutY="170.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#action_btn_edit_storage_settings" prefHeight="30.0" prefWidth="150.0" styleClass="head-background" stylesheets="@../css/stylesheet.css" text="Edit Setting" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Button>
+                <Button fx:id="btn_select_parameter" layoutX="183.0" layoutY="170.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#action_btn_select_parameter" prefHeight="30.0" prefWidth="150.0" styleClass="head-background" stylesheets="@../css/stylesheet.css" text="Select Parameter" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Button>
+                <Button fx:id="btn_edit_ftp_settings" layoutX="15.0" layoutY="170.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#action_btn_edit_ftp_settings" prefHeight="30.0" prefWidth="150.0" styleClass="head-background" stylesheets="@../css/stylesheet.css" text="FTP Setting" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Button>
+            </children>
+        </Pane>
+        <Pane layoutX="15.0" layoutY="425.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="215.0" prefWidth="185.0" style="-fx-background-color: #EEAC4C; -fx-background-radius: 1em;">
+            <children>
+                <Label layoutX="15.0" layoutY="15.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="150.0" text="  IP Address" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="13.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="tf_ip" alignment="CENTER" layoutX="15.0" layoutY="40.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="155.0" promptText="IP Address">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </TextField>
+                <Button fx:id="btn_start_ip_server" layoutX="15.0" layoutY="170.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#action_btn_start_ip_server" prefHeight="30.0" prefWidth="155.0" styleClass="head-background" stylesheets="@../css/stylesheet.css" text="Start IP Server" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Button>
+                <Label layoutX="15.0" layoutY="80.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="150.0" text="  Port Number" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="13.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="tf_port" alignment="CENTER" layoutX="15.0" layoutY="105.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="155.0" promptText="Port Number">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </TextField>
+            </children>
+        </Pane>
+        <Pane layoutX="212.0" layoutY="425.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="215.0" prefWidth="345.0" style="-fx-background-color: #5CB55B; -fx-background-radius: 1em;">
+            <children>
+                <Label layoutX="14.0" layoutY="14.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="150.0" text="  Received Data Interval" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="13.0" />
+                    </font>
+                </Label>
+                <ComboBox fx:id="cbb_received_data_interval" layoutX="14.0" layoutY="39.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="150.0" />
+                <Label layoutX="15.0" layoutY="141.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="150.0" text="  " textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </Label>
+                <Label layoutX="180.0" layoutY="15.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="150.0" text="  Strategy for Static Event" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </Label>
+                <ComboBox fx:id="cbb_moving_avg_filter" layoutX="180.0" layoutY="40.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="150.0" />
+                <Button fx:id="btn_edit_scan_settings" layoutX="180.0" layoutY="170.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#action_btn_edit_scan_settings" prefHeight="30.0" prefWidth="150.0" styleClass="head-background" stylesheets="@../css/stylesheet.css" text="Edit Setting" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Button>
+                <Label layoutX="14.0" layoutY="80.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="164.0" text="  Scan Start Time (HH:mm)" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="13.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="tf_scan_start_time" alignment="CENTER" editable="false" layoutX="14.0" layoutY="105.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="110.0" text="00:00">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </TextField>
+                <Button fx:id="btn_scan_start_time" layoutX="134.0" layoutY="105.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#action_scan_start_time" prefHeight="30.0" prefWidth="30.0" styleClass="head-background" stylesheets="@../css/stylesheet.css" textFill="WHITE">
+                    <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../img/clock.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <tooltip>
+                        <Tooltip text="Change Theme" />
+                    </tooltip>
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </Button>
+                <Button fx:id="btn_configure_gnss" layoutX="14.0" layoutY="170.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#action_btn_configure_scan" prefHeight="30.0" prefWidth="150.0" styleClass="head-background" stylesheets="@../css/stylesheet.css" text="Configure Scan" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Button>
+            </children>
+        </Pane>
+        <Button layoutX="1045.0" layoutY="5.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#action_close_application" prefHeight="35.0" prefWidth="35.0" style="-fx-background-color: transparent;">
+            <graphic>
+                <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../img/close.png" />
+                    </image>
+                </ImageView>
+            </graphic>
+            <tooltip>
+                <Tooltip text="Close Application" />
+            </tooltip>
+        </Button>
+        <Button layoutX="990.0" layoutY="5.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#action_minimise_application" prefHeight="35.0" prefWidth="35.0" style="-fx-background-color: transparent;">
+            <graphic>
+                <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../img/minimise.png" />
+                    </image>
+                </ImageView>
+            </graphic>
+            <tooltip>
+                <Tooltip text="Minimise Application" />
+            </tooltip>
+        </Button>
+        <Button fx:id="btn_about" layoutX="935.0" layoutY="5.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#action_about_us" prefHeight="35.0" prefWidth="35.0" style="-fx-background-color: transparent;">
+            <graphic>
+                <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../img/about.png" />
+                    </image>
+                </ImageView>
+            </graphic>
+            <tooltip>
+                <Tooltip text="About Application" />
+            </tooltip>
+        </Button>
+        <Label alignment="CENTER" layoutX="358.0" layoutY="1.0" prefHeight="57.0" prefWidth="406.0" text="METALOC GNSS RECEIVER" textFill="WHITE">
+            <font>
+                <Font name="Calibri Bold" size="36.0" />
+            </font>
+        </Label>
+        <Button fx:id="btn_show_rover_over_map" layoutX="935.0" layoutY="125.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#action_btn_show_rover_over_map" prefHeight="30.0" prefWidth="150.0" styleClass="head-background" stylesheets="@../css/stylesheet.css" text="Rover Over Map" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+        </Button>
+        <CheckBox fx:id="cb_update_table" layoutX="625.0" layoutY="125.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="130.0" selected="true" text=" Update Table" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+        </CheckBox>
+        <Button fx:id="btn_show_rover_over_graph" layoutX="770.0" layoutY="125.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#action_btn_show_rover_over_graph" prefHeight="30.0" prefWidth="150.0" styleClass="head-background" stylesheets="@../css/stylesheet.css" text="Rover Over Graph" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+        </Button>
+        <ImageView fitHeight="41.0" fitWidth="140.0" layoutX="946.0" layoutY="71.0" onMousePressed="#encardio_icon_pressed" onMouseReleased="#encardio_icon_released" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../img/ER%20logo%20white%20bg.png" />
+            </image>
+        </ImageView>
+        <Label layoutX="368.0" layoutY="42.0" prefHeight="35.0" prefWidth="115.0" text="EGNSS-01" textFill="WHITE">
+            <font>
+                <Font name="Calibri Bold" size="20.0" />
+            </font>
+        </Label>
+        <Label fx:id="lbl_ver" layoutX="761.0" layoutY="24.0" prefHeight="35.0" prefWidth="150.0" text="V-1.0" textFill="WHITE">
+            <font>
+                <Font name="Calibri Bold Italic" size="18.0" />
+            </font>
+        </Label>
+        <CheckBox fx:id="cb_auto_start_app" layoutX="490.0" layoutY="125.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="115.0" text=" Auto Start" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+        </CheckBox>
+        <Label fx:id="lbl_start_time" layoutX="197.0" layoutY="130.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="270.0" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+        </Label>
+    </children>
+</AnchorPane>
