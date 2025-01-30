@@ -290,15 +290,20 @@ public class METALOC_GNSS_RECEIVER_Controller implements Initializable {
         load_data();
 
         try {
-            String files[] = Tool.serachAllFilesInADirectory(Variable.storage_location + Constant.COMPANY_FOLDER + Constant.ROOT_FOLDER + Constant.STATIC_CSV_FOLDER, ".csv");
-            Tool.move_files(Variable.storage_location + Constant.COMPANY_FOLDER + Constant.ROOT_FOLDER + Constant.STATIC_CSV_FOLDER,
-                    Variable.storage_location + Constant.COMPANY_FOLDER + Constant.ROOT_FOLDER + Constant.CSV_TO_UPLOAD_FOLDER, files);
+            if (Variable.ftp_upload_enableS.equalsIgnoreCase("true")) {
+                String files[] = Tool.serachAllFilesInADirectory(Variable.storage_location + Constant.COMPANY_FOLDER + Constant.ROOT_FOLDER + Constant.STATIC_CSV_FOLDER, ".csv");
+                Tool.move_files(Variable.storage_location + Constant.COMPANY_FOLDER + Constant.ROOT_FOLDER + Constant.STATIC_CSV_FOLDER,
+                        Variable.storage_location + Constant.COMPANY_FOLDER + Constant.ROOT_FOLDER + Constant.CSV_TO_UPLOAD_FOLDER, files);
+            }
+
         } catch (Exception e) {
         }
         try {
-            String files[] = Tool.serachAllFilesInADirectory(Variable.storage_location + Constant.COMPANY_FOLDER + Constant.ROOT_FOLDER + Constant.DYNAMIC_CSV_FOLDER, ".csv");
-            Tool.move_files(Variable.storage_location + Constant.COMPANY_FOLDER + Constant.ROOT_FOLDER + Constant.DYNAMIC_CSV_FOLDER,
-                    Variable.storage_location + Constant.COMPANY_FOLDER + Constant.ROOT_FOLDER + Constant.CSV_TO_UPLOAD_FOLDER, files);
+            if (Variable.ftp_upload_enableD.equalsIgnoreCase("true")) {
+                String files[] = Tool.serachAllFilesInADirectory(Variable.storage_location + Constant.COMPANY_FOLDER + Constant.ROOT_FOLDER + Constant.DYNAMIC_CSV_FOLDER, ".csv");
+                Tool.move_files(Variable.storage_location + Constant.COMPANY_FOLDER + Constant.ROOT_FOLDER + Constant.DYNAMIC_CSV_FOLDER,
+                        Variable.storage_location + Constant.COMPANY_FOLDER + Constant.ROOT_FOLDER + Constant.CSV_TO_UPLOAD_FOLDER, files);
+            }
         } catch (Exception e) {
         }
 

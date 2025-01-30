@@ -8,7 +8,7 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="METALOC_GNSS_RECEIVER.jar" size="2340207" download="eager" />
+    <jar href="METALOC_GNSS_RECEIVER.jar" size="2340272" download="eager" />
     <jar href="lib\commons-io-2.11.0.jar" size="327135" download="eager" />
     <jar href="lib\commons-net-3.8.0.jar" size="307305" download="eager" />
     <jar href="lib\controlsfx-8.40.11.jar" size="985420" download="eager" />

@@ -11,7 +11,7 @@ package tool;
  */
 public class Constant {
 
-    final public static String VERSION = "v-0.G";
+    final public static String VERSION = "v-0.H";
     final public static String COPYRIGHT = "© 2024 Encardio-rite Electronics Pvt. Ltd. India";
 
     // RECEIVED DATA INTERVAL (SECONDS)
